@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+  <title>RPM DB</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'login/style.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B><h3>창고 재고</h3></B></td><td></td><td></td>
+            <td><a href="/logout" class="btn btn-primary">로그 아웃</a></td>
+        </tr>
+        <tr>
+            <td><B>이름</B></td>
+            <td><B>창고 재고</B></td>
+            <td><B>추가할 양</B>(반납시 -부호)</td>
+            <td><B>소유량</B></td>
+        </tr>
+        </thead>
+        <tbody>
+               <form method="POST">
+            {% csrf_token %}
+            {% for stock in stocks%}
+                <tr>
+                <td>{{stock.name}}</td>
+                <td>{{stock.num}}</td>
+                <td><input type="number" name={{stock.name}} size="20"></td>
+                {% for my_stock in my_stocks%}
+                    {% if stock.name == my_stock.itemName %}
+                        <td>{{my_stock.num}}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+            <td><button type="submit" class="btn btn-primary">확 인</button></td>
+        </form>
+        <tbody>
+    </table>
+</body>

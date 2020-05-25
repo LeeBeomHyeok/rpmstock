@@ -1,0 +1,47 @@
+h1{
+    text-align: center;
+    font-size: 70px;
+    font-weight:bold;
+}
+.ID{
+    margin-left: 55px;
+    margin-top: 40px;
+}
+.ID_box{
+    width: 300px;
+}
+.password{
+    width: 300px;
+    margin-left: 55px;
+}
+.buttons{
+    margin-left: 55px;
+    margin-top: 30px;
+}
+.signup_card{
+    left: 380px;
+    top: 190px;
+}
+.login_card{
+    top: 190px;
+    width: 500px;
+    margin-left: 325px;
+}
+.card-body{
+    margin-bottom: 59px;
+}
+.same_card{
+    margin-left: 800px;
+    margin-top: 320px;
+
+}
+.same_card_text{
+    margin-top: 35px;
+}
+.same_card_button{
+    margin-top: 35px;
+}
+.same_card_body{
+    padding-bottom: 0px;
+    margin-bottom: 36px;
+}

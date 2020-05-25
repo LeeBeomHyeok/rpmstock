@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML</title>
+    <style>
+      table {
+        width: 100%;
+      }
+      table, th, td {
+        border: 1px solid #bcbcbc;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>RPM_TABLE</caption>
+      <thead>
+        <tr>
+          <th> NAME </th>
+          {% for y in stock_list%}
+              <th> {{y}} </th>
+          {% endfor %}
+          <th></th>
+
+        </tr>
+
+      </thead>
+      <tbody>
+        <tr>
+          {% for x in owner_value_list%}
+              <th> {{x}} </th>
+              {% if forloop.counter|divisibleby:5 %}
+
+              <tr></tr>
+
+             {% endif %}
+          {% endfor %}
+
+        </tr>
+   
+
+            <!---  <th> <a>{{ y.0}}</a> </th>-->
+      </tbody>
+      <tfoot>
+
+      </tfoot>
+    </table>
+  </body>
+</html>

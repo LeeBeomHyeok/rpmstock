@@ -1,0 +1,33 @@
+{% extends 'login/base.html' %}
+{% block content %}
+
+<div class="container">
+
+    <div class="card login_card">
+        <div class="card-body">
+            <h5 class="card-title">
+              <span style=" font: Arial black  bold 4em/1em Georgia, serif ; color: black; ;">
+                <h1>MANAGER_PAGE
+                </h1>
+              </span>
+            </h5>
+            <form method="POST" action="{%url 'login'%}">
+                {% csrf_token %}
+                <div class="form-group ID">
+                    <label for="exampleInputEmail1">ID</label>
+                    <input type="text" class="form-control ID_box" id="exampleInputEmail1" aria-describedby="emailHelp" name="username">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your personal informations with anyone else.</small>
+                </div>
+                <div class="form-group password">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                </div>
+                <div class="buttons">
+                <button type="submit" class="btn btn-primary login">로그인</button>
+                </div>
+            </form>
+        </div>
+      </div>
+</div>
+
+{% endblock %}
